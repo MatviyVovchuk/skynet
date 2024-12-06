@@ -1,0 +1,9 @@
+uuid: 413015d5-af60-49f0-a1d2-49175ebe4cee
+langcode: en
+status: true
+dependencies: {  }
+name: 'Model tags'
+vid: model_tags
+description: null
+weight: 0
+new_revision: false

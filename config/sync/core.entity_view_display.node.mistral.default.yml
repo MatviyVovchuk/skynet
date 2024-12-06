@@ -1,0 +1,32 @@
+uuid: b2c1803b-3611-491e-887e-fa5df682aa0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mistral.ai_automator_status
+    - field.field.node.mistral.field_generate_body
+    - node.type.mistral
+  module:
+    - text
+    - user
+id: node.mistral.default
+targetEntityType: node
+bundle: mistral
+mode: default
+content:
+  field_generate_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  ai_automator_status: true
+  langcode: true
+  search_api_excerpt: true

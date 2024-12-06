@@ -1,0 +1,22 @@
+uuid: c287079f-6499-4e6e-8c19-370a4d7a6165
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.ai_automator_status
+    - node.type.groq
+  module:
+    - options
+id: node.groq.ai_automator_status
+field_name: ai_automator_status
+entity_type: node
+bundle: groq
+label: 'AI Automator Status'
+description: ''
+required: true
+translatable: true
+default_value:
+  - pending
+default_value_callback: ''
+settings: {  }
+field_type: list_string

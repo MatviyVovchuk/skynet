@@ -1,0 +1,24 @@
+uuid: 7b189eb6-98fe-499c-b563-43ce81a65d1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_generate_body
+    - filter.format.content_format
+    - node.type.groq
+  module:
+    - text
+id: node.groq.field_generate_body
+field_name: field_generate_body
+entity_type: node
+bundle: groq
+label: 'Generate Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_format
+field_type: text_long

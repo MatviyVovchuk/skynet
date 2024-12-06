@@ -1,0 +1,38 @@
+uuid: 71c90108-de62-4662-a3f3-a7f30c1eb083
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fireworks_ai.field_ai_image
+id: node.fireworks_ai.field_ai_image.default
+label: 'Ai image Default'
+rule: llm_image_generation
+input_mode: base
+weight: 150
+worker_type: batch
+entity_type: node
+bundle: fireworks_ai
+field_name: field_ai_image
+edit_mode: false
+base_field: title
+prompt: "Create a realistic, high-quality illustration that matches the following context as closely as possible: {{ context }}. Avoid any text or captions on the image. Focus on details, natural textures, lighting and colors to make the image look as realistic as possible.\r\n"
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_image_generation
+  automator_mode: base
+  automator_base_field: title
+  automator_prompt: "Create a realistic, high-quality illustration that matches the following context as closely as possible: {{ context }}. Avoid any text or captions on the image. Focus on details, natural textures, lighting and colors to make the image look as realistic as possible.\r\n"
+  automator_token: ''
+  automator_edit_mode: 0
+  automator_label: 'Ai image Default'
+  automator_weight: '150'
+  automator_worker_type: batch
+  automator_ai_provider: fireworks
+  automator_ai_model: playground-v2-5-1024px-aesthetic
+  automator_configuration_negative_prompts: 'text, words, letters, numbers, watermark, signature, writing, caption, label, logo, timestamp, characters, symbols, fonts, alpha'
+  automator_configuration_accept: image/png
+  automator_configuration_image_size: 1024x1024
+  automator_configuration_cfg_scale: '7'
+  automator_configuration_seed: '0'
+  automator_configuration_steps: '30'

@@ -1,0 +1,39 @@
+uuid: d30f68db-5305-4ba5-a3d6-9c1912a49d72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.lmstudio.field_ai_tags
+    - field.field.node.lmstudio.field_generate_body
+    - node.type.lmstudio
+  module:
+    - text
+    - user
+id: node.lmstudio.default
+targetEntityType: node
+bundle: lmstudio
+mode: default
+content:
+  field_ai_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_generate_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

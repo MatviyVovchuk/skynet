@@ -1,0 +1,29 @@
+uuid: fac8671e-f0e5-4c0a-bd4a-831be1165ade
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ai_tags
+    - node.type.lmstudio
+    - taxonomy.vocabulary.ai_tags
+id: node.lmstudio.field_ai_tags
+field_name: field_ai_tags
+entity_type: node
+bundle: lmstudio
+label: 'Ai Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ai_tags: ai_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

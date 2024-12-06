@@ -1,0 +1,11 @@
+uuid: 5fd1e7f6-efe5-470b-af9f-64694c46ec6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.lmstudio
+id: node.lmstudio
+target_entity_type_id: node
+target_bundle: lmstudio
+default_langcode: site_default
+language_alterable: false

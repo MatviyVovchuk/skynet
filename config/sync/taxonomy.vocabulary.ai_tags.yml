@@ -1,0 +1,9 @@
+uuid: e50ce2e1-8f04-414a-bb8f-d723846973c2
+langcode: en
+status: true
+dependencies: {  }
+name: 'AI tags'
+vid: ai_tags
+description: null
+weight: 0
+new_revision: false

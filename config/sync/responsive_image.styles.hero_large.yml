@@ -1,0 +1,27 @@
+uuid: 029de756-3b6d-47ab-b120-4172b09006bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.16_9_960x540_focal_point_webp
+    - image.style.3_4_504x672_focal_point_webp
+    - image.style.3_4_708x944_focal_point_webp
+  theme:
+    - olivero
+_core:
+  default_config_hash: NC_l3PbZoSbX3YoMAsXAWDaUiezSAUmOdDBDwLlGTDg
+id: hero_large
+label: 'Hero Large'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: 16_9_960x540_focal_point_webp
+    breakpoint_id: olivero.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: 3_4_708x944_focal_point_webp
+    breakpoint_id: olivero.sm
+    multiplier: 1x
+breakpoint_group: olivero
+fallback_image_style: 3_4_504x672_focal_point_webp

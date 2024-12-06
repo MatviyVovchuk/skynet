@@ -1,0 +1,41 @@
+uuid: 3e66fede-d3cc-408c-8f02-3a8f1a3fcf74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fireworks_ai.field_ai_tags
+id: node.fireworks_ai.field_ai_tags.default
+label: 'Ai Tags Default'
+rule: llm_taxonomy
+input_mode: base
+weight: 199
+worker_type: batch
+entity_type: node
+bundle: fireworks_ai
+field_name: field_ai_tags
+edit_mode: false
+base_field: field_generate_body
+prompt: 'Analyze the entire context {{ context }} of the article and generate a tag (1-2 words that fully describe and convey the content of the context {{ context }})'
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_taxonomy
+  automator_mode: base
+  automator_base_field: field_generate_body
+  automator_prompt: 'Analyze the entire context {{ context }} of the article and generate a tag (1-2 words that fully describe and convey the content of the context {{ context }})'
+  automator_token: ''
+  automator_edit_mode: 0
+  automator_label: 'Ai Tags Default'
+  automator_weight: '199'
+  automator_worker_type: batch
+  automator_ai_provider: fireworks
+  automator_ai_model: accounts/fireworks/models/firefunction-v1
+  automator_configuration_max_tokens: '400'
+  automator_configuration_prompt_trunate_len: '1500'
+  automator_configuration_temperature: '1'
+  automator_configuration_top_p: '1'
+  automator_configuration_top_k: '1'
+  automator_configuration_frequency_penalty: '0'
+  automator_configuration_presence_penalty: '0'
+  automator_clean_up: lowercase
+  automator_search_similar_tags: 0

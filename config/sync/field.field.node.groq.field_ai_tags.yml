@@ -1,0 +1,29 @@
+uuid: 7bf89cd1-1805-435f-9503-a5c6116ca086
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ai_tags
+    - node.type.groq
+    - taxonomy.vocabulary.ai_tags
+id: node.groq.field_ai_tags
+field_name: field_ai_tags
+entity_type: node
+bundle: groq
+label: 'Ai Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ai_tags: ai_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

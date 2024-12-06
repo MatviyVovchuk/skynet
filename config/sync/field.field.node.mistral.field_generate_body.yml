@@ -1,0 +1,24 @@
+uuid: d2528ee7-e2ed-4e9e-901c-6c9f49fed257
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_generate_body
+    - filter.format.content_format
+    - node.type.mistral
+  module:
+    - text
+id: node.mistral.field_generate_body
+field_name: field_generate_body
+entity_type: node
+bundle: mistral
+label: 'Generate Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_format
+field_type: text_long

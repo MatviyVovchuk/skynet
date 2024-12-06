@@ -1,0 +1,11 @@
+uuid: 097f4202-0d4e-4460-87b4-aa68b482c564
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ckeditor_generation
+id: node.ckeditor_generation
+target_entity_type_id: node
+target_bundle: ckeditor_generation
+default_langcode: site_default
+language_alterable: false

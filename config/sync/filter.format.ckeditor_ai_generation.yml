@@ -1,0 +1,17 @@
+uuid: 87f31aba-1262-4660-8679-01237e8f2fde
+langcode: en
+status: true
+dependencies: {  }
+name: 'CKEditor AI Generation'
+format: ckeditor_ai_generation
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: ''
+      filter_html_help: true
+      filter_html_nofollow: false

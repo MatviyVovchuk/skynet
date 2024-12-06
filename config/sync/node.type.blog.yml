@@ -1,0 +1,13 @@
+uuid: 8d81e479-9d9e-454a-b83d-30ccb7233ebc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ViNDDNDNGxuSS_Fsd8pOCTEQZ9zPDajPy820iR7GmtQ
+name: 'Blog post'
+type: blog
+description: 'A simple blog entry, categorized by tags.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

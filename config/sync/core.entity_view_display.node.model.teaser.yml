@@ -1,0 +1,26 @@
+uuid: be81fa17-cb0d-458d-9d4c-dd1081737394
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.model.body
+    - field.field.node.model.field_model_tags
+    - node.type.model
+  module:
+    - user
+id: node.model.teaser
+targetEntityType: node
+bundle: model
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_model_tags: true
+  langcode: true
+  search_api_excerpt: true

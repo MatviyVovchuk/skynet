@@ -1,0 +1,58 @@
+uuid: 76b8b6cd-1a5a-4352-b73d-0a6c93e7c066
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fireworks_ai.ai_automator_status
+    - field.field.node.fireworks_ai.field_ai_image
+    - field.field.node.fireworks_ai.field_ai_tags
+    - field.field.node.fireworks_ai.field_generate_body
+    - node.type.fireworks_ai
+  module:
+    - svg_image
+    - text
+    - user
+id: node.fireworks_ai.default
+targetEntityType: node
+bundle: fireworks_ai
+mode: default
+content:
+  field_ai_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_ai_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_generate_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  ai_automator_status: true
+  langcode: true
+  search_api_excerpt: true

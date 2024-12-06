@@ -1,0 +1,11 @@
+uuid: b37da13f-2226-4d68-83b0-9c1e35c64185
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.fireworks_ai
+id: node.fireworks_ai
+target_entity_type_id: node
+target_bundle: fireworks_ai
+default_langcode: site_default
+language_alterable: false

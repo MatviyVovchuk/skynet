@@ -1,0 +1,39 @@
+uuid: 9e7ae430-e808-4870-99b7-f47aa64d6b0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.huggingface.field_ai_tags
+    - field.field.node.huggingface.field_generate_body
+    - node.type.huggingface
+  module:
+    - text
+    - user
+id: node.huggingface.default
+targetEntityType: node
+bundle: huggingface
+mode: default
+content:
+  field_ai_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_generate_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

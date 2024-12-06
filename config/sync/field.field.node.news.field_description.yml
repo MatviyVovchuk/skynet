@@ -1,0 +1,21 @@
+uuid: 0360d9d8-fafa-4488-ad35-7842b359b79a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.news
+_core:
+  default_config_hash: iKRFhT0GFIAVZJtPTr102LNy1U-55c0_lpkx3U_ObtA
+id: node.news.field_description
+field_name: field_description
+entity_type: node
+bundle: news
+label: Description
+description: 'This description will be used in overviews, search results and social media sharing.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,11 @@
+uuid: de64c657-cd5a-417a-9350-315403edab46
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.ai_tags
+id: taxonomy_term.ai_tags
+target_entity_type_id: taxonomy_term
+target_bundle: ai_tags
+default_langcode: site_default
+language_alterable: false

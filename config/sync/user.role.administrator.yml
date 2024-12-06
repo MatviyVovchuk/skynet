@@ -1,0 +1,18 @@
+uuid: f2b25520-07d9-493f-8493-4af413ce8bbe
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_permissions
+_core:
+  default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
+id: administrator
+label: Administrator
+weight: 3
+is_admin: true
+permissions:
+  - 'create field_ai_image'
+  - 'edit field_ai_image'
+  - 'edit own field_ai_image'
+  - 'view field_ai_image'
+  - 'view own field_ai_image'

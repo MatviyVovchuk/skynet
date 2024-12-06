@@ -1,0 +1,10 @@
+status: 1
+pattern: 'Article CKEditor generation №[node:nid] '
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - node.type.ckeditor_generation
+new_content_behavior: 1

@@ -1,0 +1,33 @@
+{
+    "name": "drupal/drupal_cms_starter",
+    "description": "Sets up a Drupal CMS site with useful features and sample content.",
+    "version": "dev-main",
+    "type": "drupal-recipe",
+    "license": ["GPL-2.0-or-later"],
+    "require": {
+        "drupal/automatic_updates": "^3.1.6",
+        "drupal/core": ">=10.3",
+        "drupal/dashboard": "^2-alpha2",
+        "drupal/drupal_cms_admin_ui": "*",
+        "drupal/drupal_cms_anti_spam": "*",
+        "drupal/drupal_cms_authentication": "*",
+        "drupal/drupal_cms_olivero": "*",
+        "drupal/drupal_cms_page": "*",
+        "drupal/drupal_cms_privacy_basic": "*",
+        "drupal/drupal_cms_remote_video": "*",
+        "drupal/drupal_cms_search": "*",
+        "drupal/drupal_cms_seo_basic": "*",
+        "drupal/easy_email_express": "^1.0.2",
+        "drupal/pathauto": "^1.13",
+        "drupal/project_browser": "^2-alpha6"
+    },
+    "suggest": {
+        "drupal/drupal_cms_accessibility_tools": "Installs and configures tools to help authors make their content accessible.",
+        "drupal/drupal_cms_blog": "Sets up a basic blog, with tagging.",
+        "drupal/drupal_cms_events": "A content type and view to help you manage events.",
+        "drupal/drupal_cms_forms": "Provides a simple contact form, and tools for building more complex forms.",
+        "drupal/drupal_cms_multilingual": "Adds support for translations to all content types.",
+        "drupal/drupal_cms_news": "Adds a news content type with an overview page and related news items.",
+        "drupal/drupal_cms_seo_tools": "Configures Drupal CMS for search engine optimization best practices."
+    }
+}

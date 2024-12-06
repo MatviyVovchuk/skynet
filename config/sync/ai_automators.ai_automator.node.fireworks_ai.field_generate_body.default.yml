@@ -1,0 +1,40 @@
+uuid: 538ddbf3-e658-46aa-b9d0-5c45d67c5dcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fireworks_ai.field_generate_body
+id: node.fireworks_ai.field_generate_body.default
+label: 'Generate Body Default'
+rule: llm_simple_text_long
+input_mode: base
+weight: 100
+worker_type: batch
+entity_type: node
+bundle: fireworks_ai
+field_name: field_generate_body
+edit_mode: false
+base_field: title
+prompt: "Generate for me a complete, accurate, high-quality article based on the {{ context }} title, this article should fully convey the entire topic, should be concise and logically structured, and this article should be designed with the help of html tags and without using CSS classes. If you can't figure out what {{ context }}  is about, then create an article based on your best judgment about {{ context }}\r\n"
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_simple_text_long
+  automator_mode: base
+  automator_base_field: title
+  automator_prompt: "Generate for me a complete, accurate, high-quality article based on the {{ context }} title, this article should fully convey the entire topic, should be concise and logically structured, and this article should be designed with the help of html tags and without using CSS classes. If you can't figure out what {{ context }}  is about, then create an article based on your best judgment about {{ context }}\r\n"
+  automator_token: ''
+  automator_edit_mode: 0
+  automator_label: 'Generate Body Default'
+  automator_weight: '100'
+  automator_worker_type: batch
+  automator_ai_provider: fireworks
+  automator_ai_model: accounts/fireworks/models/firefunction-v1
+  automator_configuration_max_tokens: '400'
+  automator_configuration_prompt_trunate_len: '1500'
+  automator_configuration_temperature: '1'
+  automator_configuration_top_p: '1'
+  automator_configuration_top_k: '1'
+  automator_configuration_frequency_penalty: '0'
+  automator_configuration_presence_penalty: '0'
+  automator_code_block_type: html

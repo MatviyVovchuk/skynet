@@ -1,0 +1,27 @@
+uuid: 6837f5de-c25a-4f16-84ff-95fb6c595844
+langcode: en
+status: false
+dependencies:
+  module:
+    - ai_search
+id: skynet_server
+name: 'SkyNet Server'
+description: ''
+backend: search_api_ai_search
+backend_config:
+  chat_model: fireworks__accounts/fireworks/models/firefunction-v2
+  database: milvus
+  database_settings:
+    database_name: skynet
+    collection: skynet_test
+    metric: cosine_similarity
+  embeddings_engine: fireworks__WhereIsAI/UAE-Large-V1
+  embeddings_engine_configuration:
+    set_dimensions: 0
+    dimensions: 1024
+  embedding_strategy: contextual_chunks
+  embedding_strategy_configuration:
+    chunk_size: '500'
+    chunk_min_overlap: '100'
+    contextual_content_max_percentage: '30'
+  embedding_strategy_details: ''

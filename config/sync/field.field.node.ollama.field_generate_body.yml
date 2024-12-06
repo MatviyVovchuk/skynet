@@ -1,0 +1,24 @@
+uuid: fab2bf48-73b7-4d31-983b-0e8ad6e3b070
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_generate_body
+    - filter.format.content_format
+    - node.type.ollama
+  module:
+    - text
+id: node.ollama.field_generate_body
+field_name: field_generate_body
+entity_type: node
+bundle: ollama
+label: 'Generate Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_format
+field_type: text_long

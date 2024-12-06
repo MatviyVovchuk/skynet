@@ -1,0 +1,18 @@
+uuid: 90bd0206-d02f-4a65-b3b9-e7585ecb71f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'All AI provider'
+type: all_ai_provider
+description: null
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: true

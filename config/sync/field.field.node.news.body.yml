@@ -1,0 +1,28 @@
+uuid: 0298d2cd-5186-4fde-813c-77493e3c7117
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.content_format
+    - node.type.news
+  module:
+    - text
+_core:
+  default_config_hash: hl-0wX2Y0RUZqEif_oZb2Kno8-7vGlCRysMHzb5m2s0
+id: node.news.body
+field_name: body
+entity_type: node
+bundle: news
+label: Body
+description: 'The content of your news item.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - content_format
+field_type: text_with_summary

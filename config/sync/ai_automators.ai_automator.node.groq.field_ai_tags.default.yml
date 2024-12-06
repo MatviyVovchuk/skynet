@@ -1,0 +1,39 @@
+uuid: 6f2ad99a-04c4-4837-b396-362d49c1d23d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.groq.field_ai_tags
+id: node.groq.field_ai_tags.default
+label: 'Ai Tags Default'
+rule: llm_taxonomy
+input_mode: base
+weight: 150
+worker_type: batch
+entity_type: node
+bundle: groq
+field_name: field_ai_tags
+edit_mode: false
+base_field: field_generate_body
+prompt: 'Analyze the entire context {{ context }} of the article and generate a tag (1-2 words that fully describe and convey the content of the context {{ context }})'
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_taxonomy
+  automator_mode: base
+  automator_base_field: field_generate_body
+  automator_prompt: 'Analyze the entire context {{ context }} of the article and generate a tag (1-2 words that fully describe and convey the content of the context {{ context }})'
+  automator_token: ''
+  automator_edit_mode: 0
+  automator_label: 'Ai Tags Default'
+  automator_weight: '150'
+  automator_worker_type: batch
+  automator_ai_provider: groq
+  automator_ai_model: llama3-groq-8b-8192-tool-use-preview
+  automator_configuration_max_tokens: '1024'
+  automator_configuration_temperature: '1'
+  automator_configuration_frequency_penalty: '0'
+  automator_configuration_presence_penalty: '0'
+  automator_configuration_top_p: '1'
+  automator_clean_up: lowercase
+  automator_search_similar_tags: 0

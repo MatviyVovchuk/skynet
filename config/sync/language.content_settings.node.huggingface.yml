@@ -1,0 +1,11 @@
+uuid: 0d438c8a-51aa-443c-8d0f-5d1317719722
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.huggingface
+id: node.huggingface
+target_entity_type_id: node
+target_bundle: huggingface
+default_langcode: site_default
+language_alterable: false

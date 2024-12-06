@@ -1,0 +1,11 @@
+{
+    "name": "drupal/drupal_cms_multilingual",
+    "description": "Configures multilingual support for all content types.",
+    "version": "dev-main",
+    "type": "drupal-recipe",
+    "license": ["GPL-2.0-or-later"],
+    "require": {
+        "drupal/core": ">=10.4",
+        "drupal/hreflang": "^1.14"
+    }
+}

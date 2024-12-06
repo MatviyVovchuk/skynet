@@ -1,0 +1,57 @@
+uuid: 1f6b97c9-7f49-4574-a96f-d99494bbb9ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.all_ai_provider.ai_automator_status
+    - field.field.node.all_ai_provider.field_fireworks_ai
+    - field.field.node.all_ai_provider.field_groq
+    - field.field.node.all_ai_provider.field_mistral
+    - field.field.node.all_ai_provider.field_prompt
+    - node.type.all_ai_provider
+  module:
+    - text
+    - user
+id: node.all_ai_provider.default
+targetEntityType: node
+bundle: all_ai_provider
+mode: default
+content:
+  field_fireworks_ai:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_groq:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_mistral:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_prompt:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  ai_automator_status: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: f1383bcb-869c-4188-a6f4-80e67a2aa9b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.blog
+_core:
+  default_config_hash: YVYtvpaST8X-lzuXa0yiUIj3gO_j8Zo05uf06KI1yBs
+id: node.blog.field_description
+field_name: field_description
+entity_type: node
+bundle: blog
+label: Description
+description: 'This description will be used in overviews, search results and social media sharing.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

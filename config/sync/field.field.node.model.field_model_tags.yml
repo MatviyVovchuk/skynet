@@ -1,0 +1,29 @@
+uuid: 1fbdc0e9-2b8a-4aa3-a6c9-bad2f22580cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_model_tags
+    - node.type.model
+    - taxonomy.vocabulary.model_tags
+id: node.model.field_model_tags
+field_name: field_model_tags
+entity_type: node
+bundle: model
+label: 'Model tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      model_tags: model_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,13 @@
+{
+    "name": "drupal/drupal_cms_blog",
+    "description": "Sets up a basic blog, with tagging.",
+    "version": "dev-main",
+    "type": "drupal-recipe",
+    "license": ["GPL-2.0-or-later"],
+    "require": {
+        "drupal/core": ">=10.3",
+        "drupal/drupal_cms_content_type_base": "*",
+        "drupal/better_exposed_filters": "^7.0",
+        "drupal/pathauto": "^1.13"
+    }
+}

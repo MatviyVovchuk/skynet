@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: 3Z9v-hb7YMbil_kbCz38MI1XTwApOEufze3093c_HTE
+analyse_policies_enabled: '0'
+tone_adjust_enabled: '1'
+summarise_enabled: '1'
+suggest_title_enabled: '1'
+suggest_tax_enabled: '1'
+analyse_policies_model: ''
+tone_adjust_model: mistral__ministral-3b-latest
+summarise_model: mistral__ministral-3b-latest
+suggest_title_model: mistral__ministral-3b-latest
+suggest_tax_model: fireworks__accounts/fireworks/models/firefunction-v2

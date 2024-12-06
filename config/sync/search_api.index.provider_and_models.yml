@@ -1,0 +1,39 @@
+uuid: 12eed53f-c99c-45e2-9ad8-31a07f4aebda
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.server.skynet_reborn
+  module:
+    - node
+id: provider_and_models
+name: 'Provider and Models'
+description: ''
+read_only: false
+field_settings: {  }
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - ai_provider
+        - model
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: skynet_reborn

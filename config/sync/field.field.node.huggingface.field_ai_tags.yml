@@ -1,0 +1,29 @@
+uuid: 6a039f69-ff43-4758-9db4-70982fc9666b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ai_tags
+    - node.type.huggingface
+    - taxonomy.vocabulary.ai_tags
+id: node.huggingface.field_ai_tags
+field_name: field_ai_tags
+entity_type: node
+bundle: huggingface
+label: 'Ai Tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ai_tags: ai_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

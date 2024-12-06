@@ -1,0 +1,18 @@
+uuid: f99b748d-0fca-4b98-9bfe-a765e9074a68
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Fireworks AI'
+type: fireworks_ai
+description: null
+help: null
+new_revision: false
+preview_mode: 0
+display_submitted: true

@@ -1,0 +1,36 @@
+uuid: 560b4145-2407-4515-8496-02316ad3082c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.all_ai_provider.field_mistral
+id: node.all_ai_provider.field_mistral.default
+label: 'Mistral Default'
+rule: llm_simple_text_long
+input_mode: base
+weight: 150
+worker_type: batch
+entity_type: node
+bundle: all_ai_provider
+field_name: field_mistral
+edit_mode: false
+base_field: field_prompt
+prompt: "Generate for me a complete, accurate, quality article based on the {{ context }} prompt, this article must fully reproduce the context that provides the prompt, be concise and logically structured, and this article must be formatted using html tags and without using CSS classes. If you can't figure out what {{ context }} is talking about, then create an article based on your best judgment about {{ context }}"
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_simple_text_long
+  automator_mode: base
+  automator_base_field: field_prompt
+  automator_prompt: "Generate for me a complete, accurate, quality article based on the {{ context }} prompt, this article must fully reproduce the context that provides the prompt, be concise and logically structured, and this article must be formatted using html tags and without using CSS classes. If you can't figure out what {{ context }} is talking about, then create an article based on your best judgment about {{ context }}"
+  automator_token: ''
+  automator_edit_mode: 0
+  automator_label: 'Mistral Default'
+  automator_weight: '150'
+  automator_worker_type: batch
+  automator_ai_provider: mistral
+  automator_ai_model: ministral-3b-latest
+  automator_configuration_max_tokens: '1024'
+  automator_configuration_temperature: '0.7'
+  automator_configuration_top_p: '1'
+  automator_code_block_type: html

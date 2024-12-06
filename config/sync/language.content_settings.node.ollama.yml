@@ -1,0 +1,11 @@
+uuid: 5d6c209e-b6e2-4e29-bfee-6c2198ea0c21
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ollama
+id: node.ollama
+target_entity_type_id: node
+target_bundle: ollama
+default_langcode: site_default
+language_alterable: false

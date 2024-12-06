@@ -1,0 +1,10 @@
+status: 1
+pattern: 'Article All AI provider №[node:nid] '
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - node.type.all_ai_provider
+new_content_behavior: 1

@@ -1,0 +1,11 @@
+uuid: 4625a144-9707-4c52-9da4-70fedefc769b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.all_ai_provider
+id: node.all_ai_provider
+target_entity_type_id: node
+target_bundle: all_ai_provider
+default_langcode: site_default
+language_alterable: false

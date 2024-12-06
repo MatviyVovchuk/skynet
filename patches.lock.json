@@ -1,0 +1,17 @@
+{
+    "_hash": "73b384ec53160face8c9a8a561a59dd408cc02c42ef06c023e27cae746268ca8",
+    "patches": {
+        "drupal/core": [
+            {
+                "package": "drupal/core",
+                "description": "#3481164: Announcements Feed breaks `test-site.php install`",
+                "url": "https://www.drupal.org/files/issues/2024-10-16/3481164.patch",
+                "sha256": "cf81f867c053876f8a76c6be64ef23a8b207c51b00b1edaabd303fddcffc317e",
+                "depth": 2,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "name": "drupal/drupal_cms_page",
+    "description": "A basic content type to create simple pages.",
+    "version": "dev-main",
+    "type": "drupal-recipe",
+    "license": ["GPL-2.0-or-later"],
+    "require": {
+        "drupal/core": ">=10.4",
+        "drupal/drupal_cms_content_type_base": "*"
+    }
+}

@@ -1,0 +1,13 @@
+uuid: dd1038d7-8c21-4e88-b810-4375ba106206
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: RXjIXMpmyF6mgO4LD0wWu5MALEYEEz-LOu-NKKXq57A
+name: 'News item'
+type: news
+description: 'A simple news item, categorized by tags.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,282 @@
+variables:
+  # Keeping this low helps jobs find an available runner without waiting.
+  # @see https://git.drupalcode.org/project/gitlab_templates/-/blob/main/includes/include.drupalci.main.yml?ref_type=heads
+  KUBERNETES_CPU_REQUEST: 2
+  CI_DEBUG_SERVICES: 'true'
+  # For faster performance, don't audit dependencies automatically. We have
+  # a dedicated job for this.
+  COMPOSER_NO_AUDIT: 1
+  COMPOSER_NO_INTERACTION: 1
+  BUILD_DIR: project
+  _PROJECT_ROOT: $CI_PROJECT_DIR/$BUILD_DIR
+  _WEB_ROOT: web
+
+default:
+  # New pushes can stop the current job and start a new one.
+  interruptible: true
+  image:
+    # This image has a version of SQLite that is compatible with Drupal 11.
+    name: 'drupalci/php-8.3-ubuntu-apache:production'
+  retry:
+    max: 2
+    when:
+      - unknown_failure
+      - api_failure
+      - stuck_or_timeout_failure
+      - runner_system_failure
+      - scheduler_failure
+
+# The canonical list of Drupal CMS components that are part of this repository.
+.components: &components
+  - DIR: drupal_cms_olivero
+    URL: 'git@git.drupal.org:project/drupal_cms_olivero.git'
+  - DIR: project_template
+    URL: 'git@git.drupal.org:project/cms.git'
+  - DIR: recipes/drupal_cms_accessibility_tools
+    URL: 'git@git.drupal.org:project/drupal_cms_accessibility_tools.git'
+  - DIR: recipes/drupal_cms_admin_ui
+    URL: 'git@git.drupal.org:project/drupal_cms_admin_ui.git'
+  - DIR: recipes/drupal_cms_ai
+    URL: 'git@git.drupalcode.org:project/drupal_cms_ai.git'
+  - DIR: recipes/drupal_cms_analytics
+    URL: 'git@git.drupal.org:project/drupal_cms_analytics.git'
+  - DIR: recipes/drupal_cms_anti_spam
+    URL: 'git@git.drupal.org:project/drupal_cms_anti_spam.git'
+  - DIR: recipes/drupal_cms_authentication
+    URL: 'git@git.drupal.org:project/drupal_cms_authentication.git'
+  - DIR: recipes/drupal_cms_blog
+    URL: 'git@git.drupal.org:project/drupal_cms_blog.git'
+  - DIR: recipes/drupal_cms_content_type_base
+    URL: 'git@git.drupal.org:project/drupal_cms_content_type_base.git'
+  - DIR: recipes/drupal_cms_events
+    URL: 'git@git.drupal.org:project/drupal_cms_events.git'
+  - DIR: recipes/drupal_cms_forms
+    URL: 'git@git.drupal.org:project/drupal_cms_forms.git'
+  - DIR: recipes/drupal_cms_image
+    URL: 'git@git.drupal.org:project/drupal_cms_image.git'
+  - DIR: recipes/drupal_cms_multilingual
+    URL: 'git@git.drupal.org:project/drupal_cms_multilingual.git'
+  - DIR: recipes/drupal_cms_news
+    URL: 'git@git.drupal.org:project/drupal_cms_news.git'
+  - DIR: recipes/drupal_cms_page
+    URL: 'git@git.drupal.org:project/drupal_cms_page.git'
+  - DIR: recipes/drupal_cms_privacy_basic
+    URL: 'git@git.drupal.org:project/drupal_cms_privacy_basic.git'
+  - DIR: recipes/drupal_cms_remote_video
+    URL: 'git@git.drupal.org:project/drupal_cms_remote_video.git'
+  - DIR: recipes/drupal_cms_search
+    URL: 'git@git.drupal.org:project/drupal_cms_search.git'
+  - DIR: recipes/drupal_cms_seo_basic
+    URL: 'git@git.drupal.org:project/drupal_cms_seo_basic.git'
+  - DIR: recipes/drupal_cms_seo_tools
+    URL: 'git@git.drupal.org:project/drupal_cms_seo_tools.git'
+  - DIR: recipes/drupal_cms_starter
+    URL: 'git@git.drupal.org:project/drupal_cms_starter.git'
+
+.setup-composer: &setup-composer
+  # Add all components as globally available path repositories, simulating Packagist.
+  - 'sed "s|\"url\": \"|\"url\": \"$CI_PROJECT_DIR/|g" components.composer.json > $(composer config --global home)/config.json'
+
+build project:
+  stage: build
+  variables:
+    COMPOSER_MIRROR_PATH_REPOS: 1
+  script:
+    - *setup-composer
+    # Add the project template as a globally available path repository, simulating Packagist.
+    - composer config --global repositories.template path $CI_PROJECT_DIR/project_template
+    # Create the project.
+    - composer create-project drupal/cms $BUILD_DIR --stability=dev
+    # Delete all `.git` directories.
+    - find $BUILD_DIR -depth -type d -name '.git' -exec rm -r -f {} ';'
+    # ------
+    # ------ BEGIN UNPACKING ------
+    # ------
+    # Until they are available on Packagist, the various components need to NOT be managed
+    # by Composer at all. We should remove all of this before general release.
+    - cd $BUILD_DIR
+    # Use the patches lock file to define the patches.
+    - cp -f patches.lock.json patches.json
+    # Install and enable the unpack plugin.
+    - composer config repositories.unpack vcs https://gitlab.ewdev.ca/yonas.legesse/drupal-recipe-unpack.git
+    - composer config allow-plugins.ewcomposer/unpack true
+    - composer require ewcomposer/unpack:dev-master
+    # Unpack all our recipes. This needs to be done separately from removal, since
+    # recipes can depend on other recipes.
+    - RECIPES=$(find $CI_PROJECT_DIR/recipes -mindepth 1 -maxdepth 1 -type d -printf "drupal/%P\n")
+    - for name in $RECIPES; do composer unpack $name; done
+    # Remove the recipes, the unpacker, the installer, and the Olivero subtheme.
+    - for name in $RECIPES; do composer remove --quiet --no-update $name; done
+    - composer remove ewcomposer/unpack drupal/drupal_cms_installer drupal/drupal_cms_olivero
+    - composer config allow-plugins.ewcomposer/unpack false
+    - composer config --unset repositories.unpack
+    # Ensure everything we removed is physically present in the build.
+    - cp -R $CI_PROJECT_DIR/recipes/* recipes
+    - cd $_WEB_ROOT
+    - mkdir -p themes
+    - mv $CI_PROJECT_DIR/drupal_cms_olivero themes
+    - cd $CI_PROJECT_DIR
+    # ------
+    # ------ END UNPACKING ------
+    # ------
+    # Speed up the installer by pre-parsing all of the recipes available in the installer
+    # and storing them in a serialized file format.
+    - cd $BUILD_DIR
+    - cd $_WEB_ROOT && PATH="$PWD/vendor/bin:$PATH" ./profiles/drupal_cms_installer/build-cache.sh
+    # Turn the built project into an archive that can be downloaded by the public
+    # to spin up projects with Drupal CMS.
+    - cd - && composer archive --format=zip --file=drupal-cms --dir=$CI_PROJECT_DIR
+  artifacts:
+    paths:
+      - $BUILD_DIR
+      - drupal-cms.zip
+    expire_in: 1 hour
+  rules:
+    - when: on_success
+
+# Adds dev dependencies to the built project.
+build test project:
+  stage: build
+  needs:
+    - 'build project'
+  before_script:
+    - apt-get update
+    - apt-get install -y jq
+    - *setup-composer
+  script:
+    - cd $BUILD_DIR
+    # Regenerate `composer.json`, merging our dev requirements into it.
+    - mv composer.json base.composer.json
+    - jq -s '.[0] * .[1]' base.composer.json $CI_PROJECT_DIR/dev.composer.json > composer.json
+    # Regenerate the patch list and update dependencies.
+    - composer patches-relock
+    - composer update drupal/core-dev --with-all-dependencies
+  artifacts:
+    paths:
+      - $BUILD_DIR
+    expire_in: 1 hour
+  rules:
+    - when: on_success
+
+.start-apache: &start-apache
+  - ln -s -f $_PROJECT_ROOT/$_WEB_ROOT /var/www/html/$_WEB_ROOT
+  - chown -R www-data:www-data $_PROJECT_ROOT/$_WEB_ROOT
+  - service apache2 start
+
+.test-base:
+  stage: test
+  needs:
+    - 'build test project'
+  services:
+    - name: 'drupalci/mysql-8'
+      alias: database
+  variables:
+    DDEV_PRIMARY_URL: http://localhost/$_WEB_ROOT
+    SIMPLETEST_DB: mysql://drupaltestbot:drupaltestbotpw@database/mysql
+  artifacts:
+    paths:
+      # Keep any artifacts generated by test runners.
+      - $BUILD_DIR/$_WEB_ROOT/sites/simpletest
+      - cypress
+    when: on_failure
+    expire_in: 1 week
+  rules:
+    - when: on_success
+
+run PHP tests:
+  extends: .test-base
+  parallel:
+    matrix:
+      *components
+  script:
+    - *start-apache
+    - cd $BUILD_DIR
+    - sudo SIMPLETEST_BASE_URL=$DDEV_PRIMARY_URL SIMPLETEST_DB=$SIMPLETEST_DB SYMFONY_DEPRECATIONS_HELPER=disabled -u www-data vendor/bin/phpunit --configuration=$_WEB_ROOT/core $CI_PROJECT_DIR/$DIR
+
+run end-to-end tests:
+  extends: .test-base
+  before_script:
+    # Install Cypress' system dependencies.
+    # See https://docs.cypress.io/guides/getting-started/installing-cypress#UbuntuDebian
+    - apt-get update
+    - apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2t64 libxtst6 xauth xvfb
+  variables:
+    # @see cypress.config.js
+    DDEV_DOCROOT: $_PROJECT_ROOT/$_WEB_ROOT
+  script:
+    - npm clean-install
+    - *start-apache
+    - npm test
+
+audit dependencies:
+  stage: test
+  needs:
+    - 'build project'
+  script:
+    - composer audit --working-dir=$BUILD_DIR
+  rules:
+    - when: on_success
+  allow_failure: true
+
+# Check spelling in the documentation.
+check spelling:
+  stage: test
+  rules:
+    # Only do this if Markdown files in the docs directory changed because of
+    # a push, or a change in a merge request.
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" || $CI_PIPELINE_SOURCE == "push"
+      changes:
+        - docs/**/*.md
+  script: npx cspell --show-suggestions --show-context --no-progress docs
+
+export config:
+  stage: deploy
+  needs:
+    - 'build project'
+  script:
+    - cd $BUILD_DIR
+    - vendor/bin/drush site:install --yes --db-url=sqlite://localhost/db.sqlite
+    # Apply the add-on recipes suggested by the starter.
+    - for name in $(composer suggest --list --working-dir=recipes/drupal_cms_starter); do vendor/bin/drush recipe $CI_PROJECT_DIR/recipes/$(basename $name) --input=drupal_cms_analytics.property_id=GTM-123456; done
+    - vendor/bin/drush config:export --yes --destination=$CI_PROJECT_DIR/config
+  artifacts:
+    paths:
+      - config
+    expire_in: 1 hour
+  rules:
+    - when: on_success
+
+subtree split:
+  stage: deploy
+  image: phenaproxima/splitsh-ci
+  cache:
+    key: splitsh-$CI_COMMIT_BRANCH
+    paths:
+      # @see https://github.com/splitsh/lite/blob/master/splitter/cache.go#L26
+      - .git/splitsh.db
+  parallel:
+    matrix:
+      *components
+  before_script:
+    # We need to identify ourselves to Git in order to push.
+    - git config --global user.name "Drupal CMS Bot"
+    - git config --global user.email "70095-drupal-cms-bot@users.noreply.drupalcode.org"
+    # Ensure we can push to the remotes.
+    - eval "$(ssh-agent -s)"
+    - ssh-add - < "${SSH_PRIVATE_KEY}"
+    - mkdir ~/.ssh
+    - cp $SSH_KNOWN_HOSTS ~/.ssh/known_hosts
+    # Test that we can connect successfully.
+    - ssh -T git@git.drupal.org
+  script:
+    # We'll need the full commit history to do the subtree splits.
+    - git fetch --unshallow origin $CI_COMMIT_BRANCH
+    - COMMIT=`/splitsh-lite --prefix=$DIR/`
+    - git checkout -b split $COMMIT
+    - git remote set-url origin $URL
+    - git remote -v
+    - echo "git push origin HEAD:$CI_COMMIT_BRANCH"
+  rules:
+    # Only do this job if we're on a release branch, on a push, and not a fork.
+    - if: $CI_COMMIT_BRANCH =~ /^([0-9]+\.)?[0-9]+\.x$/ && $CI_PIPELINE_SOURCE == "push" && $CI_PROJECT_ROOT_NAMESPACE == "project"
+      when: on_success

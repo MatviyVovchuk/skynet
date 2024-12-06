@@ -1,0 +1,31 @@
+uuid: 344b2601-ed20-4c2b-a0d0-0e01dbb12758
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.all_ai_provider.field_generate_images
+id: node.all_ai_provider.field_generate_images.default
+label: 'Generate images Default'
+rule: llm_image_generation
+input_mode: base
+weight: 100
+worker_type: direct
+entity_type: node
+bundle: all_ai_provider
+field_name: field_generate_images
+edit_mode: false
+base_field: revision_log
+prompt: ''
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_image_generation
+  automator_mode: base
+  automator_base_field: revision_log
+  automator_prompt: ''
+  automator_token: ''
+  automator_edit_mode: 0
+  automator_label: 'Generate images Default'
+  automator_weight: '100'
+  automator_worker_type: direct
+  automator_ai_provider: default_json

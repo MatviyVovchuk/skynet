@@ -1,0 +1,11 @@
+uuid: 9bcafaa0-bd4c-4687-9079-8f731557e44f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.mistral
+id: node.mistral
+target_entity_type_id: node
+target_bundle: mistral
+default_langcode: site_default
+language_alterable: false

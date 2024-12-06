@@ -1,0 +1,24 @@
+uuid: 18962eca-4b6f-486e-a496-a15da06de078
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fireworks_ai
+    - filter.format.content_format
+    - node.type.all_ai_provider
+  module:
+    - text
+id: node.all_ai_provider.field_fireworks_ai
+field_name: field_fireworks_ai
+entity_type: node
+bundle: all_ai_provider
+label: 'Fireworks AI'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_format
+field_type: text_long

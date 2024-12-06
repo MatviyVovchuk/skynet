@@ -1,0 +1,24 @@
+uuid: 95f62913-7855-476a-b7fb-6c28669e442a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mistral
+    - filter.format.content_format
+    - node.type.all_ai_provider
+  module:
+    - text
+id: node.all_ai_provider.field_mistral
+field_name: field_mistral
+entity_type: node
+bundle: all_ai_provider
+label: Mistral
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_format
+field_type: text_long

@@ -1,0 +1,53 @@
+uuid: aaf5d28a-8dac-450e-8e1a-227050bf9e1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.ckeditor_ai_generation
+  module:
+    - ckeditor5
+format: ckeditor_ai_generation
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - aickeditor
+      - sourceEditing
+  plugins:
+    ai_ckeditor_ai:
+      dialog:
+        autoresize: 'min-width: 600px'
+        height: '750'
+        width: '900'
+        dialog_class: ai-ckeditor-modal
+      plugins:
+        ai_automators_ckeditor:
+          workflows: {  }
+          enabled: true
+        ai_ckeditor_completion:
+          provider: mistral__ministral-3b-latest
+          enabled: true
+        ai_ckeditor_help:
+          enabled: false
+        ai_ckeditor_reformat_html:
+          provider: mistral__ministral-3b-latest
+          enabled: true
+        ai_ckeditor_summarize:
+          provider: mistral__ministral-3b-latest
+          enabled: true
+        ai_ckeditor_tone:
+          autocreate: false
+          provider: mistral__ministral-3b-latest
+          tone_vocabulary: tone
+          use_description: 1
+          enabled: true
+        ai_ckeditor_translate:
+          autocreate: false
+          provider: mistral__ministral-3b-latest
+          translate_vocabulary: language
+          use_description: true
+          enabled: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+image_upload:
+  status: false

@@ -1,0 +1,41 @@
+uuid: 85b3fefd-5433-45a8-9844-e49261f75abc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.groq.ai_automator_status
+    - field.field.node.groq.field_ai_tags
+    - field.field.node.groq.field_generate_body
+    - node.type.groq
+  module:
+    - text
+    - user
+id: node.groq.default
+targetEntityType: node
+bundle: groq
+mode: default
+content:
+  field_ai_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_generate_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  ai_automator_status: true
+  langcode: true
+  search_api_excerpt: true

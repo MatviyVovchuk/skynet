@@ -1,0 +1,26 @@
+uuid: a0f0fc4f-6639-4f49-85ee-0006c922c631
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ckeditor_body
+    - filter.format.ckeditor_ai_generation
+    - node.type.ckeditor_generation
+  module:
+    - text
+id: node.ckeditor_generation.field_ckeditor_body
+field_name: field_ckeditor_body
+entity_type: node
+bundle: ckeditor_generation
+label: 'CKEditor Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - ckeditor_ai_generation
+field_type: text_with_summary

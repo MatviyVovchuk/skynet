@@ -1,0 +1,32 @@
+uuid: fd2241f5-385c-4777-a3bf-6f2c16fb5c4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.all_ai_provider.ai_automator_status
+    - field.field.node.all_ai_provider.field_fireworks_ai
+    - field.field.node.all_ai_provider.field_groq
+    - field.field.node.all_ai_provider.field_mistral
+    - field.field.node.all_ai_provider.field_prompt
+    - node.type.all_ai_provider
+  module:
+    - user
+id: node.all_ai_provider.teaser
+targetEntityType: node
+bundle: all_ai_provider
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  ai_automator_status: true
+  field_fireworks_ai: true
+  field_groq: true
+  field_mistral: true
+  field_prompt: true
+  langcode: true
+  search_api_excerpt: true

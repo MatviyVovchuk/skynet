@@ -1,0 +1,26 @@
+uuid: 93236523-1740-41d0-a8e3-cd857c2c0bef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - filter.format.content_format
+    - node.type.ai_provider
+  module:
+    - text
+id: node.ai_provider.body
+field_name: body
+entity_type: node
+bundle: ai_provider
+label: Body
+description: 'The content of your blog post.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - content_format
+field_type: text_with_summary

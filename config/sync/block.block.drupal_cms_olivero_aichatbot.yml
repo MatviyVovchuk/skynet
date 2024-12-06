@@ -1,0 +1,30 @@
+uuid: 5a9b3f82-e57c-4205-9717-1713955197ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_chatbot
+  theme:
+    - drupal_cms_olivero
+id: drupal_cms_olivero_aichatbot
+theme: drupal_cms_olivero
+region: content
+weight: -5
+provider: null
+plugin: ai_chatbot_block
+settings:
+  id: ai_chatbot_block
+  label: 'AI Chatbot'
+  label_display: '0'
+  provider: ai_chatbot
+  ai_assistant: ai_site_chat
+  bot_name: 'Generic Chatbot'
+  bot_image: /core/misc/druplicon.png
+  use_username: 1
+  default_username: User
+  use_avatar: 1
+  default_avatar: /core/misc/favicon.ico
+  first_message: 'Hello! How can I help you today?'
+  stream: 1
+  toggle_state: remember
+visibility: {  }

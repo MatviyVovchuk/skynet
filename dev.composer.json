@@ -1,0 +1,24 @@
+{
+    "_info": [
+        "This file contains internal development dependencies and patches for Drupal CMS.",
+        "Do NOT use it to build a real site!"
+    ],
+    "require-dev": {
+        "drupal/core-dev": "^11.1-rc1",
+        "drupal/default_content": "^2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
+        }
+    },
+    "extra": {
+        "patches": {
+            "drupal/core": {
+                "#3481164: Announcements Feed breaks `test-site.php install`": "https://www.drupal.org/files/issues/2024-10-16/3481164.patch"
+            }
+        }
+    }
+}
