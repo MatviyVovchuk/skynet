@@ -1,0 +1,8 @@
+uuid: f1128121-5aef-4606-af9a-02322b348544
+langcode: en
+status: true
+dependencies: {  }
+id: node__thief_simulator
+label: 'Content: Thief simulator'
+tags:
+  canonical_url: '[node:field_website_link]'

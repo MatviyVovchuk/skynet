@@ -1,0 +1,38 @@
+uuid: d9961fca-3bda-4853-8917-842411ce9003
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.thief_simulator.field_website_body
+id: node.thief_simulator.field_website_body.default
+label: 'Website body Default'
+rule: simple_crawler_text_long
+input_mode: base
+weight: 250
+worker_type: batch
+entity_type: node
+bundle: thief_simulator
+field_name: field_website_body
+edit_mode: false
+base_field: field_website_link
+prompt: ''
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: simple_crawler_text_long
+  automator_mode: base
+  automator_base_field: field_website_link
+  automator_edit_mode: 0
+  automator_label: 'Website body Default'
+  automator_weight: '250'
+  automator_worker_type: batch
+  automator_rate_limit: '0'
+  automator_user_agent: ''
+  automator_basic_auth_username: ''
+  automator_basic_auth_password: ''
+  automator_custom_headers: ''
+  automator_custom_cookies: ''
+  automator_crawler_strip_tags: 0
+  automator_crawler_mode: readability
+  automator_crawler_tag: body
+  automator_crawler_remove: "style\r\nscript\r\n"

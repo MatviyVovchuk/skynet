@@ -1,0 +1,46 @@
+uuid: f9461bb3-a8b3-4b1b-af60-58a6c61cdc81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.thief_simulator.ai_automator_status
+    - field.field.node.thief_simulator.field_website_body
+    - field.field.node.thief_simulator.field_website_link
+    - node.type.thief_simulator
+  module:
+    - link
+    - text
+    - user
+id: node.thief_simulator.default
+targetEntityType: node
+bundle: thief_simulator
+mode: default
+content:
+  field_website_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_website_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  ai_automator_status: true
+  langcode: true
+  search_api_excerpt: true

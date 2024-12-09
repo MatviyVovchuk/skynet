@@ -1,45 +1,42 @@
-uuid: 90758db3-2817-4475-b671-649aaf5c2c5d
+uuid: aff1c3f9-dd3d-497e-ab45-f92a973c4376
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.model.ai_automator_status
-    - field.field.node.model.body
-    - field.field.node.model.field_model_tags
-    - node.type.model
+    - field.field.node.thief_simulator.ai_automator_status
+    - field.field.node.thief_simulator.field_website_body
+    - field.field.node.thief_simulator.field_website_link
+    - node.type.thief_simulator
   module:
+    - link
     - path
     - text
-id: node.model.default
+id: node.thief_simulator.default
 targetEntityType: node
-bundle: model
+bundle: thief_simulator
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 5
-    region: content
-    settings:
-      rows: 5
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_model_tags:
-    type: entity_reference_autocomplete_tags
+  field_website_body:
+    type: text_textarea
+    weight: 122
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_website_link:
+    type: link_default
     weight: 121
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   langcode:
     type: language_select

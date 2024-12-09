@@ -11,8 +11,8 @@ label: Administrator
 weight: 3
 is_admin: true
 permissions:
-  - 'create field_ai_image'
-  - 'edit field_ai_image'
-  - 'edit own field_ai_image'
-  - 'view field_ai_image'
-  - 'view own field_ai_image'
+  - 'create field_website_link'
+  - 'edit field_website_link'
+  - 'edit own field_website_link'
+  - 'view field_website_link'
+  - 'view own field_website_link'

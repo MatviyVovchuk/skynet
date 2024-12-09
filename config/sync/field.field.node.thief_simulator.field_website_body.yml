@@ -1,0 +1,24 @@
+uuid: 49e65924-ecf2-44ed-b8bb-0306c9288ff2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website_body
+    - filter.format.content_format
+    - node.type.thief_simulator
+  module:
+    - text
+id: node.thief_simulator.field_website_body
+field_name: field_website_body
+entity_type: node
+bundle: thief_simulator
+label: 'Website body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_format
+field_type: text_long

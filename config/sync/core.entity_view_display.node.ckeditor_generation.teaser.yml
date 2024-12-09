@@ -1,0 +1,37 @@
+uuid: be50737d-c05e-4414-a3c3-6f6d222bb30e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ckeditor_generation.field_ckeditor_body
+    - node.type.ckeditor_generation
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.ckeditor_generation.teaser
+targetEntityType: node
+bundle: ckeditor_generation
+mode: teaser
+content:
+  field_ckeditor_body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

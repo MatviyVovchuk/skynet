@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.model.ai_automator_status
     - field.field.node.model.body
     - field.field.node.model.field_model_tags
     - node.type.model
@@ -20,6 +21,7 @@ content:
     weight: 100
     region: content
 hidden:
+  ai_automator_status: true
   body: true
   field_model_tags: true
   langcode: true

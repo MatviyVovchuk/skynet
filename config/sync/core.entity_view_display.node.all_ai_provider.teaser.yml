@@ -17,16 +17,23 @@ targetEntityType: node
 bundle: all_ai_provider
 mode: teaser
 content:
+  field_prompt:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
   ai_automator_status: true
   field_fireworks_ai: true
   field_groq: true
   field_mistral: true
-  field_prompt: true
   langcode: true
   search_api_excerpt: true

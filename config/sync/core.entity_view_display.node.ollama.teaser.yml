@@ -1,32 +1,37 @@
-uuid: 874defeb-1495-4bdf-b52d-f7725a630e71
+uuid: 375369ec-d43c-48b4-b98b-4bf6b1f3c846
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.field.node.ollama.field_ai_tags
     - field.field.node.ollama.field_generate_body
     - node.type.ollama
   module:
+    - layout_builder
     - text
     - user
-id: node.ollama.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.ollama.teaser
 targetEntityType: node
 bundle: ollama
-mode: default
+mode: teaser
 content:
   field_ai_tags:
     type: entity_reference_label
-    label: hidden
+    label: above
     settings:
       link: true
     third_party_settings: {  }
     weight: 103
     region: content
   field_generate_body:
-    type: text_trimmed
-    label: hidden
-    settings:
-      trim_length: 200
+    type: text_default
+    label: above
+    settings: {  }
     third_party_settings: {  }
     weight: 101
     region: content

@@ -1,18 +1,24 @@
-uuid: 874defeb-1495-4bdf-b52d-f7725a630e71
+uuid: 73ffac6e-7adb-4179-b344-a522b27c33fa
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.ollama.field_ai_tags
-    - field.field.node.ollama.field_generate_body
-    - node.type.ollama
+    - core.entity_view_mode.node.teaser
+    - field.field.node.lmstudio.field_ai_tags
+    - field.field.node.lmstudio.field_generate_body
+    - node.type.lmstudio
   module:
+    - layout_builder
     - text
     - user
-id: node.ollama.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.lmstudio.teaser
 targetEntityType: node
-bundle: ollama
-mode: default
+bundle: lmstudio
+mode: teaser
 content:
   field_ai_tags:
     type: entity_reference_label

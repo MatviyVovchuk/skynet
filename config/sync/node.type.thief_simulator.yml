@@ -1,0 +1,18 @@
+uuid: 1c74fc69-f545-4a4c-bc5b-a837bb5eb1e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Thief simulator'
+type: thief_simulator
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: true

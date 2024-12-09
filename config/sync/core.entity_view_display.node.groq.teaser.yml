@@ -1,18 +1,25 @@
-uuid: 874defeb-1495-4bdf-b52d-f7725a630e71
+uuid: 28151a78-4f2c-47bd-aba1-ce51c7a3a532
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.ollama.field_ai_tags
-    - field.field.node.ollama.field_generate_body
-    - node.type.ollama
+    - core.entity_view_mode.node.teaser
+    - field.field.node.groq.ai_automator_status
+    - field.field.node.groq.field_ai_tags
+    - field.field.node.groq.field_generate_body
+    - node.type.groq
   module:
+    - layout_builder
     - text
     - user
-id: node.ollama.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.groq.teaser
 targetEntityType: node
-bundle: ollama
-mode: default
+bundle: groq
+mode: teaser
 content:
   field_ai_tags:
     type: entity_reference_label
@@ -36,5 +43,6 @@ content:
     weight: 100
     region: content
 hidden:
+  ai_automator_status: true
   langcode: true
   search_api_excerpt: true

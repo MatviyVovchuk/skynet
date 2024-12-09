@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_model_tags
     - node.type.model
     - taxonomy.vocabulary.model_tags
+    - taxonomy.vocabulary.type_model
 id: node.model.field_model_tags
 field_name: field_model_tags
 entity_type: node
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       model_tags: model_tags
+      type_model: type_model
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: model_tags
 field_type: entity_reference

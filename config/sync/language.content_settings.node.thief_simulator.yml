@@ -1,0 +1,11 @@
+uuid: 065843d6-5573-4bc2-acee-92b92583fad1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thief_simulator
+id: node.thief_simulator
+target_entity_type_id: node
+target_bundle: thief_simulator
+default_langcode: site_default
+language_alterable: false

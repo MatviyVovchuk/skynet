@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.model.ai_automator_status
     - field.field.node.model.body
     - field.field.node.model.field_model_tags
     - node.type.model
@@ -35,5 +36,6 @@ content:
     weight: 100
     region: content
 hidden:
+  ai_automator_status: true
   langcode: true
   search_api_excerpt: true
