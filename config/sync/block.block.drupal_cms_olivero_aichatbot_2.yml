@@ -1,25 +1,26 @@
-uuid: 5a9b3f82-e57c-4205-9717-1713955197ca
+uuid: 12860b29-9fd4-4440-b142-6a602d0b39eb
 langcode: en
 status: true
 dependencies:
   module:
     - ai_chatbot
     - system
+    - user
   theme:
     - drupal_cms_olivero
-id: drupal_cms_olivero_aichatbot
+id: drupal_cms_olivero_aichatbot_2
 theme: drupal_cms_olivero
 region: content
-weight: -5
+weight: 0
 provider: null
 plugin: ai_chatbot_block
 settings:
   id: ai_chatbot_block
-  label: 'AI Chatbot'
-  label_display: '0'
+  label: 'AI agent Chatbot '
+  label_display: visible
   provider: ai_chatbot
-  ai_assistant: ai_site_chat
-  bot_name: 'Generic Chatbot'
+  ai_assistant: drupal_helper
+  bot_name: 'AI Agent Chatbot '
   bot_image: /core/misc/druplicon.png
   use_username: 1
   default_username: User
@@ -27,11 +28,21 @@ settings:
   default_avatar: /core/misc/favicon.ico
   first_message: 'Hello! How can I help you today?'
   stream: 1
-  toggle_state: remember
+  toggle_state: open
   output_type: markdown
   show_structured_results: false
 visibility:
   request_path:
     id: request_path
-    negate: true
+    negate: false
     pages: /test-chat-bot-ai-agent
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator

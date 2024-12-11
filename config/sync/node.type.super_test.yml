@@ -1,0 +1,11 @@
+uuid: 99043e78-3309-4d27-a6a7-476b9cc12d16
+langcode: en
+status: true
+dependencies: {  }
+name: 'Super Test'
+type: super_test
+description: 'A content type for conducting and managing super tests or advanced evaluations.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

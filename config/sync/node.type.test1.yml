@@ -1,0 +1,11 @@
+uuid: e904963e-8570-463d-acdf-fde541a3af5c
+langcode: en
+status: true
+dependencies: {  }
+name: Test1
+type: test1
+description: 'A content type for testing purposes.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

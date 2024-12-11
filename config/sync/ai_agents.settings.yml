@@ -1,0 +1,25 @@
+taxonomy_agent:
+  permissions:
+    authenticated: authenticated
+    content_editor: content_editor
+    administrator: administrator
+views_agent:
+  permissions:
+    authenticated: authenticated
+    content_editor: content_editor
+    administrator: administrator
+node_content_type_agent:
+  permissions:
+    authenticated: authenticated
+    content_editor: content_editor
+    administrator: administrator
+field_type_agent:
+  permissions:
+    authenticated: authenticated
+    content_editor: content_editor
+    administrator: administrator
+module_enable:
+  permissions:
+    authenticated: authenticated
+    content_editor: content_editor
+    administrator: administrator

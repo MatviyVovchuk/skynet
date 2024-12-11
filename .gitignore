@@ -9,6 +9,7 @@
 /.docksal/
 /.ddev/
 /*.sql
+/*.mysql
 /.github/
 
 # Ignore Drupal's file directory

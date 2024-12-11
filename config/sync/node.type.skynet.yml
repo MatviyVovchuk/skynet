@@ -1,0 +1,11 @@
+uuid: 9d358652-e0dc-4ad4-be88-589d718cdb5e
+langcode: en
+status: true
+dependencies: {  }
+name: Skynet
+type: skynet
+description: 'A content type for managing and tracking Skynet-related information and activities.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

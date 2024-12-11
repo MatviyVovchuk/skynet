@@ -1,0 +1,38 @@
+uuid: d04a3139-5b4a-44dc-b606-63a87b3a0cda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.skynet.body
+    - field.field.node.skynet.field_image
+    - node.type.skynet
+  module:
+    - text
+    - user
+id: node.skynet.default
+targetEntityType: node
+bundle: skynet
+mode: default
+content:
+  body:
+    type: text_default
+    label: null
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: text_default
+    label: null
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
