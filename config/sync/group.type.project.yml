@@ -1,0 +1,12 @@
+uuid: 3c548945-914a-4fa0-9fda-259dc31fd89d
+langcode: en
+status: true
+dependencies: {  }
+id: project
+label: Project
+description: 'A <em>group type</em> for <em>custom projects</em> based on <b>Drupal</b>.'
+new_revision: false
+creator_membership: true
+creator_wizard: true
+creator_roles:
+  - project-admin

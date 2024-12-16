@@ -1,14 +1,14 @@
-uuid: 1a97ae15-137a-4ee5-b363-18f03f569574
+uuid: 19a14ebc-a1b9-44d0-95ed-a79393d80f9d
 langcode: en
 status: true
 dependencies:
   config:
-    - group.type.settings
-id: settings-admin
+    - group.type.project
+id: project-admin
 label: Admin
 weight: 100
 admin: true
 scope: individual
 global_role: null
-group_type: settings
+group_type: project
 permissions: {  }

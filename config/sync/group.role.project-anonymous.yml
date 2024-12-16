@@ -1,15 +1,15 @@
-uuid: 05be5138-f021-4716-bea5-9c3a6c46cc8a
+uuid: e65738d7-315a-41b9-9cc2-c3c181ef1945
 langcode: en
 status: true
 dependencies:
   config:
-    - group.type.settings
+    - group.type.project
     - user.role.anonymous
-id: settings-anonymous
+id: project-anonymous
 label: Anonymous
 weight: -102
 admin: false
 scope: outsider
 global_role: anonymous
-group_type: settings
+group_type: project
 permissions: {  }

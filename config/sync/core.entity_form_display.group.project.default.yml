@@ -1,0 +1,117 @@
+uuid: 6bbb431e-ef21-4c2c-8181-66a41733b9ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.project.field_feeds
+    - field.field.group.project.field_rest_api
+    - field.field.group.project.field_source
+    - field.field.group.project.field_xml
+    - group.type.project
+  module:
+    - conditional_fields
+    - file
+id: group.project.default
+targetEntityType: group
+bundle: project
+mode: default
+content:
+  field_feeds:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        a62a60c1-ac20-439b-8afc-9c00ed8ff427:
+          entity_type: group
+          bundle: project
+          dependee: field_source
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '1'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_rest_api:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      conditional_fields:
+        17cff46f-23a6-4c4e-ae38-fc9c0b2d6d1e:
+          entity_type: group
+          bundle: project
+          dependee: field_source
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '2'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  field_source:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_xml:
+    type: file_generic
+    weight: 4
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings:
+      conditional_fields:
+        4c8b557c-16a9-49f3-9cc0-d1170c24eb71:
+          entity_type: group
+          bundle: project
+          dependee: field_source
+          settings:
+            state: visible
+            reset: false
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '3'
+            effect: show
+            effect_options: {  }
+            selector: ''
+  label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true
+  status: true
+  uid: true

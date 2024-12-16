@@ -1,0 +1,21 @@
+uuid: e528064d-6c9c-4141-af0a-37c69cf23338
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_source
+    - group.type.project
+  module:
+    - options
+id: group.project.field_source
+field_name: field_source
+entity_type: group
+bundle: project
+label: Source
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

@@ -1,15 +1,15 @@
-uuid: fde17127-f9ac-496b-9383-74872feba984
+uuid: 23250d3b-1485-41e4-9a9e-a986b37e5bc6
 langcode: en
 status: true
 dependencies:
   config:
-    - group.type.settings
+    - group.type.project
     - user.role.authenticated
-id: settings-member
+id: project-member
 label: Member
 weight: -100
 admin: false
 scope: insider
 global_role: authenticated
-group_type: settings
+group_type: project
 permissions: {  }

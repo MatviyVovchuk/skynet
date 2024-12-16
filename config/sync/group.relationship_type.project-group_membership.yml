@@ -1,13 +1,13 @@
-uuid: 4a579622-2870-4579-ae22-0d784daf8c58
+uuid: f578cf47-5aa4-43c0-8620-16b8564703e1
 langcode: en
 status: true
 dependencies:
   config:
-    - group.type.settings
+    - group.type.project
   module:
     - user
-id: settings-group_membership
-group_type: settings
+id: project-group_membership
+group_type: project
 content_plugin: group_membership
 plugin_config:
   group_cardinality: 0

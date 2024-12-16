@@ -1,15 +1,15 @@
-uuid: 590b4cd6-041c-4367-a6a5-cab392d7b33f
+uuid: b8fc8e75-53fc-4593-a4fa-5d008edbecf6
 langcode: en
 status: true
 dependencies:
   config:
-    - group.type.settings
+    - group.type.project
     - user.role.administrator
-id: settings-admin_in
+id: project-admin_out
 label: Administrator
-weight: 102
+weight: 101
 admin: true
-scope: insider
+scope: outsider
 global_role: administrator
-group_type: settings
+group_type: project
 permissions: {  }

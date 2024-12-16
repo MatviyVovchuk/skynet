@@ -1,13 +1,13 @@
-uuid: db665b1d-3a01-43df-8511-c41a45364e7e
+uuid: f7af6af8-2548-484e-b39e-dd4a241c9699
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.group_relationship.settings-group_membership.group_roles
-    - group.relationship_type.settings-group_membership
-id: group_relationship.settings-group_membership.default
+    - field.field.group_relationship.project-group_membership.group_roles
+    - group.relationship_type.project-group_membership
+id: group_relationship.project-group_membership.default
 targetEntityType: group_relationship
-bundle: settings-group_membership
+bundle: project-group_membership
 mode: default
 content:
   group_roles:

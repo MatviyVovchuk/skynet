@@ -1,0 +1,61 @@
+uuid: 56a40d5e-28f7-4f73-9fe4-e06a39a068e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.project.field_feeds
+    - field.field.group.project.field_rest_api
+    - field.field.group.project.field_source
+    - field.field.group.project.field_xml
+    - group.type.project
+  module:
+    - file
+    - options
+id: group.project.default
+targetEntityType: group
+bundle: project
+mode: default
+content:
+  field_feeds:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_rest_api:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_source:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_xml:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  changed: true
+  created: true
+  langcode: true
+  search_api_excerpt: true
+  uid: true
