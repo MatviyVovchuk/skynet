@@ -1,24 +1,26 @@
-uuid: d111802c-7caa-4450-9724-ae46e8ca03b8
+uuid: da0aa375-9a86-459f-bd32-01c14a041954
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.skynet
+    - filter.format.content_format
+    - node.type.chat_bot_information
   module:
     - text
-id: node.skynet.body
+id: node.chat_bot_information.body
 field_name: body
 entity_type: node
-bundle: skynet
+bundle: chat_bot_information
 label: Body
-description: 'The main content of the Skynet content type.'
+description: 'The content of your blog post.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   display_summary: false
   required_summary: false
-  allowed_formats: {  }
+  allowed_formats:
+    - content_format
 field_type: text_with_summary

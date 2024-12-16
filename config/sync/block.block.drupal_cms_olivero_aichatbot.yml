@@ -25,7 +25,7 @@ settings:
   default_username: User
   use_avatar: 1
   default_avatar: /core/misc/favicon.ico
-  first_message: 'Hello! How can I help you today?'
+  first_message: 'Hello! I’m here to help you interact with the AI ecosystem. Type <b>/help</b> to see available commands. How can I assist you?'
   stream: 1
   toggle_state: remember
   output_type: markdown
@@ -34,4 +34,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: /test-chat-bot-ai-agent
+    pages: /chatbot-ai-agent

@@ -1,0 +1,11 @@
+uuid: 1cd4a344-1590-480a-bd5d-0cab7acf84ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.chat_bot_information
+id: node.chat_bot_information
+target_entity_type_id: node
+target_bundle: chat_bot_information
+default_langcode: site_default
+language_alterable: false

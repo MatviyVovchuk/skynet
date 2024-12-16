@@ -1,4 +1,4 @@
-uuid: dffaad86-d7b7-4ea5-86ca-182bc8028bbf
+uuid: 0e889937-9696-4c19-bffd-b8c41396a601
 langcode: en
 status: true
 dependencies:
@@ -9,8 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: test
-type: test
+name: 'Chat bot information'
+type: chat_bot_information
 description: null
 help: null
 new_revision: true

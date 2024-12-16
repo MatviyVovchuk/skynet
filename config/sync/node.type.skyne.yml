@@ -1,0 +1,11 @@
+uuid: 3b35429f-9ea9-49dd-9a64-81be1dacdd5a
+langcode: en
+status: true
+dependencies: {  }
+name: Skyne
+type: skyne
+description: 'A custom content type for storing and displaying Skyne-related information.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

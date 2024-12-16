@@ -5,13 +5,7 @@ prompt_logging_tags: ''
 default_providers:
   chat:
     provider_id: anthropic
-    model_id: llama-3.1-8b-instant
-  chat_with_complex_json:
-    provider_id: anthropic
     model_id: claude-3-5-sonnet-20240620
   text_to_image:
     provider_id: fireworks
     model_id: playground-v2-5-1024px-aesthetic
-  chat_with_image_json:
-    provider_id: anthropic
-    model_id: claude-3-sonnet-20240229

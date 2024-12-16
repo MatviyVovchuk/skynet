@@ -1,14 +1,9 @@
-taxonomy_agent:
+module_enable:
   permissions:
     authenticated: authenticated
     content_editor: content_editor
     administrator: administrator
-views_agent:
-  permissions:
-    authenticated: authenticated
-    content_editor: content_editor
-    administrator: administrator
-node_content_type_agent:
+webform_agent:
   permissions:
     authenticated: authenticated
     content_editor: content_editor
@@ -18,7 +13,12 @@ field_type_agent:
     authenticated: authenticated
     content_editor: content_editor
     administrator: administrator
-module_enable:
+node_content_type_agent:
+  permissions:
+    authenticated: authenticated
+    content_editor: content_editor
+    administrator: administrator
+views_agent:
   permissions:
     authenticated: authenticated
     content_editor: content_editor

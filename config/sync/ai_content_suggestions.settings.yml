@@ -1,0 +1,6 @@
+plugins:
+  moderate: ''
+  tone: mistral__ministral-3b-latest
+  summarise: mistral__ministral-3b-latest
+  title_suggest: mistral__ministral-3b-latest
+  taxonomy_suggest: fireworks__accounts/fireworks/models/firefunction-v2

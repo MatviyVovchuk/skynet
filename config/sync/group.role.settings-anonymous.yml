@@ -1,0 +1,15 @@
+uuid: 05be5138-f021-4716-bea5-9c3a6c46cc8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.settings
+    - user.role.anonymous
+id: settings-anonymous
+label: Anonymous
+weight: -102
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: settings
+permissions: {  }

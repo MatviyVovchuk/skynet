@@ -1,25 +1,24 @@
-uuid: d84adf56-a182-4cee-b34a-35af9c27b151
+uuid: efb3e3ce-1240-4d89-ad8e-31a4e13396a0
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.skynet.body
-    - field.field.node.skynet.field_image
-    - node.type.skynet
+    - field.field.node.chat_bot_information.body
+    - node.type.chat_bot_information
   module:
     - path
     - text
-id: node.skynet.default
+id: node.chat_bot_information.default
 targetEntityType: node
-bundle: skynet
+bundle: chat_bot_information
 mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 5
     region: content
     settings:
-      rows: 9
+      rows: 5
       summary_rows: 3
       placeholder: ''
       show_summary: false
@@ -29,16 +28,6 @@ content:
     weight: 10
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_image:
-    type: text_textarea_with_summary
-    weight: 122
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
     third_party_settings: {  }
   langcode:
     type: language_select

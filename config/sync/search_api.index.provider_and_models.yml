@@ -17,6 +17,7 @@ datasource_settings:
       default: false
       selected:
         - ai_provider
+        - chat_bot_information
         - model
     languages:
       default: true

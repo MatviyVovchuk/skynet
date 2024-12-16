@@ -1,32 +1,24 @@
-uuid: d04a3139-5b4a-44dc-b606-63a87b3a0cda
+uuid: c89fc551-8acc-4037-b3d3-624a5f580ad1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.skynet.body
-    - field.field.node.skynet.field_image
-    - node.type.skynet
+    - field.field.node.chat_bot_information.body
+    - node.type.chat_bot_information
   module:
     - text
     - user
-id: node.skynet.default
+id: node.chat_bot_information.default
 targetEntityType: node
-bundle: skynet
+bundle: chat_bot_information
 mode: default
 content:
   body:
     type: text_default
-    label: null
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 101
-    region: content
-  field_image:
-    type: text_default
-    label: null
-    settings: {  }
-    third_party_settings: {  }
-    weight: 102
     region: content
   links:
     settings: {  }

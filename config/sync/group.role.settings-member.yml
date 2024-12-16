@@ -1,0 +1,15 @@
+uuid: fde17127-f9ac-496b-9383-74872feba984
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.settings
+    - user.role.authenticated
+id: settings-member
+label: Member
+weight: -100
+admin: false
+scope: insider
+global_role: authenticated
+group_type: settings
+permissions: {  }

@@ -1,0 +1,18 @@
+uuid: 792cc6bd-734d-4c12-b517-67f02e033360
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.settings
+id: group.settings.label
+field_name: label
+entity_type: group
+bundle: settings
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

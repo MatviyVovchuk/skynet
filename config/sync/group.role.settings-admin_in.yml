@@ -1,0 +1,15 @@
+uuid: 590b4cd6-041c-4367-a6a5-cab392d7b33f
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.settings
+    - user.role.administrator
+id: settings-admin_in
+label: Administrator
+weight: 102
+admin: true
+scope: insider
+global_role: administrator
+group_type: settings
+permissions: {  }
